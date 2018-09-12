@@ -178,6 +178,7 @@ export class RecordDescriptor {
                         height: _f.height,
                         foreignKey: _f.foreignKey,
                         forNode: _f.forNode,
+                        dictionaryId: _f.dictionaryId,
                         default: _f.default
                     };
                 }

@@ -8,6 +8,7 @@ export const PARTICIPANT_SEV_DICT: IDictionaryDescriptor = Object.assign({}, LIN
     title: 'Участники СЭВ (NEW)',
     actions: LINEAR_TEMPLATE.actions.concat(['tableCustomization']), // ??
     visible: true,
+    iconName: 'eos-icon-shared-folder-blue',
     keyField: 'ISN_LCLASSIF',
     defaultOrder: 'ADDRESS',
     fields: LINEAR_TEMPLATE.fields.concat([{

@@ -17,63 +17,70 @@ import { AuthorizedGuard, UnauthorizedGuard } from './guards/eos-auth.guard';
 import { LoginComponent } from './login/login.component';
 /// import { environment } from 'environments/environment';
 
-const routes: Routes = [{
-    path: 'spravochniki',
-    data: { title: 'Справочники', showInBreadcrumb: true },
+const childrenDictionariesComponent = [{
+    path: '',
+    pathMatch: 'full',
+    component: DictionariesComponent,
     canActivate: [AuthorizedGuard],
+}, {
+    path: ':dictionaryId',
+    data: {
+        title: 'Справочник', showBreadcrumb: true,
+        showInBreadcrumb: true,
+        showSandwichInBreadcrumb: true,
+        showPushpin: true
+    },
     children: [{
-        path: '',
-        pathMatch: 'full',
-        component: DictionariesComponent,
-        canActivate: [AuthorizedGuard],
-    }, {
-        path: ':dictionaryId',
-        data: {
-            title: 'Справочник', showBreadcrumb: true,
-            showInBreadcrumb: true,
-            showSandwichInBreadcrumb: true,
-            showPushpin: true
-        },
+        path: ':nodeId',
+        data: { title: 'Запись', showInBreadcrumb: false },
         children: [{
-            path: ':nodeId',
-            data: { title: 'Запись', showInBreadcrumb: false },
-            children: [{
-                path: '',
-                component: DictionaryComponent,
-                pathMatch: 'full',
-                data: { showBreadcrumb: true, showSandwichInBreadcrumb: true, showPushpin: true },
-            }, {
-                path: 'edit',
-                pathMatch: 'full',
-                component: CardComponent,
-                data: {
-                    title: 'Редактирование',
-                    showInBreadcrumb: false,
-                    showSandwichInBreadcrumb: false,
-                    showBreadcrumb: true,
-                    closeStyle: true,
-                    showPushpin: false
-                },
-                canDeactivate: [CanDeactivateGuard]
-            }, {
-                path: 'view',
-                pathMatch: 'full',
-                component: CardComponent,
-                data: {
-                    title: 'Просмотр',
-                    showInBreadcrumb: false,
-                    showSandwichInBreadcrumb: false,
-                    showBreadcrumb: true,
-                    closeStyle: true,
-                    showPushpin: false
-                },
-            }],
-        }, {
             path: '',
             component: DictionaryComponent,
             pathMatch: 'full',
+            data: { showBreadcrumb: true, showSandwichInBreadcrumb: true, showPushpin: true },
+        }, {
+            path: 'edit',
+            pathMatch: 'full',
+            component: CardComponent,
+            data: {
+                title: 'Редактирование',
+                showInBreadcrumb: false,
+                showSandwichInBreadcrumb: false,
+                showBreadcrumb: true,
+                closeStyle: true,
+                showPushpin: false
+            },
+            canDeactivate: [CanDeactivateGuard]
+        }, {
+            path: 'view',
+            pathMatch: 'full',
+            component: CardComponent,
+            data: {
+                title: 'Просмотр',
+                showInBreadcrumb: false,
+                showSandwichInBreadcrumb: false,
+                showBreadcrumb: true,
+                closeStyle: true,
+                showPushpin: false
+            },
         }],
+    }, {
+        path: '',
+        component: DictionaryComponent,
+        pathMatch: 'full',
     }],
+}];
+
+const routes: Routes = [{
+    path: 'spravochniki/nadzor',
+    data: { title: 'Справочники', showInBreadcrumb: true },
+    canActivate: [AuthorizedGuard],
+    children: childrenDictionariesComponent,
+    }, {
+    path: 'spravochniki',
+    data: { title: 'Справочники', showInBreadcrumb: true },
+    canActivate: [AuthorizedGuard],
+    children: childrenDictionariesComponent,
 }, {
     path: 'desk',
     data: { title: 'Главная', showInBreadcrumb: false },

@@ -18,6 +18,7 @@ export const DOCGROUP_DICT: ITreeDictionaryDescriptor = {
     title: 'Группы документов',
     defaultOrder: 'CLASSIF_NAME',
     visible: true,
+    iconName: 'eos-icon-folder-group-blue',
     actions: ['add', 'markRecords', 'quickSearch', 'fullSearch', 'order', 'userOrder',
         'moveUp', 'moveDown', 'navigateUp', 'navigateDown', 'showDeleted', 'tableCustomization',
         'edit', 'view', 'remove', 'removeHard', 'userOrder', 'restore', 'showAllSubnodes'

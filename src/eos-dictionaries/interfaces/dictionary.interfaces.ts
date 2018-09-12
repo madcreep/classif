@@ -53,6 +53,7 @@ export interface IFieldDescriptor {
     height?: number;
     forNode?: boolean;
     default?: any;
+    dictionaryId?: string;
 }
 
 export interface IFieldDescriptorBase {
@@ -71,6 +72,7 @@ export interface IFieldDescriptorBase {
     readonly height?: number;
     readonly forNode?: boolean;
     readonly default?: any;
+    readonly dictionaryId?: string;
 }
 
 export interface IFieldView extends IFieldDescriptorBase {
@@ -88,6 +90,7 @@ export interface IDictionaryDescriptor {
     keyField: string;
     defaultOrder: string;
     parentField?: string;
+    iconName: string;
 
     // listFields: string[];
     searchFields: string[];

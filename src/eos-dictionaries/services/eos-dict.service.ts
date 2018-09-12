@@ -302,6 +302,10 @@ export class EosDictService {
         return Promise.resolve(this._descrSrv.visibleDictionaries());
     }
 
+    getNadzorDictionariesList(): Promise<IDictionaryDescriptor[]> {
+        return Promise.resolve(this._descrSrv.visibleNadzorDictionaries());
+    }
+
     defaultOrder() {
         this.currentDictionary.defaultOrder();
         this._reorderList(this.currentDictionary);

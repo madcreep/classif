@@ -8,6 +8,7 @@ export const BROADCAST_CHANEL_DICT: IDictionaryDescriptor = Object.assign({}, LI
     apiInstance: 'SEV_CHANNEL',
     actions: LINEAR_TEMPLATE.actions.concat(['tableCustomization']),
     visible: true,
+    iconName: 'eos-icon-move-2d-blue',
     keyField: 'ISN_LCLASSIF',
     defaultOrder: 'CHANNEL_TYPE',
     title: 'Каналы передачи сообщений (NEW)',

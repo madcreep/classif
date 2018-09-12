@@ -7,6 +7,7 @@ export const STATUS_REPLY_DICT: IDictionaryDescriptor = Object.assign({}, LINEAR
     apiInstance: 'STATUS_REPLY_CL',
     title: 'Состояния исполнения (Исполнителя)',
     visible: true,
+    iconName: 'eos-icon-administrant-status-blue',
     fields: [...LINEAR_TEMPLATE.fields,
     Object.assign({}, COMMON_FIELD_NAME, {
         isUnique: true,

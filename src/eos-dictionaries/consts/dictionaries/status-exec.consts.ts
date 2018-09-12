@@ -7,6 +7,7 @@ export const STATUS_EXEC_DICT: IDictionaryDescriptor = Object.assign({}, LINEAR_
     apiInstance: 'STATUS_EXEC_CL',
     title: 'Состояния исполнения (Контролера)',
     visible: true,
+    iconName: 'eos-icon-viewed-blue',
     fields: [...LINEAR_TEMPLATE.fields,
     Object.assign({}, COMMON_FIELD_NAME, {
         isUnique: true,

@@ -2,13 +2,15 @@ import { IDictionaryDescriptor } from 'eos-dictionaries/interfaces';
 import { LINEAR_TEMPLATE } from './_linear-template';
 import { COMMON_FIELD_NAME, COMMON_FIELD_FULLNAME } from './_common';
 import { SEARCH_TYPES } from '../search-types';
+import {environment} from '../../../environments/environment';
 
 export const CABINET_DICT: IDictionaryDescriptor = Object.assign({}, LINEAR_TEMPLATE, {
     id: 'cabinet',
     apiInstance: 'CABINET',
     title: 'Кабинеты',
     keyField: 'ISN_CABINET',
-    visible: false,
+    visible: !environment.production,
+    iconName: 'eos-icon-department-blue',
     searchConfig: [SEARCH_TYPES.quick, SEARCH_TYPES.full],
     actions: ['add', 'markRecords', 'quickSearch', 'fullSearch', 'order', 'userOrder', 'edit',
         'moveUp', 'moveDown', 'navigateUp', 'navigateDown', 'showDeleted', 'remove', 'removeHard',

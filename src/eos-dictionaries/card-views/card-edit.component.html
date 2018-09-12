@@ -52,6 +52,13 @@
                     [inputs]="inputs"
                     [data]="data"
                     [editMode]="editMode"></eos-visatype-card>
+                <eos-reestrtype-card *ngSwitchCase="'reestrtype'"
+                    #cardEditEl
+                    class="reestrtype-card simple-card-edit"
+                    [form]="form"
+                    [inputs]="inputs"
+                    [data]="data"
+                    [editMode]="editMode"></eos-reestrtype-card>
                 <eos-simple-card-edit *ngSwitchDefault
                     #cardEditEl
                     class="simple-card-edit"

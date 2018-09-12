@@ -37,17 +37,13 @@
     width: 100%;
     vertical-align: middle;
     font-size: 0;
-    /* color: */
+    overflow: hidden;
     .item {
         display: inline-block;
-        margin-right: $grid-gutter-width / 2;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
         vertical-align: middle;
-        &+.item {
-            margin-left: $grid-gutter-width / 2;
-        }
         .text {
             cursor: pointer;
         }
