@@ -257,11 +257,11 @@ export class NodeListComponent implements OnInit, OnDestroy {
                 fullWidth += itemWidth;
             });
             this.customFields.forEach((_f) => {
-                length[_f.key] = Math.round(length[_f.key] / fullWidth * 100);
+                length[_f.key] = length[_f.key] / fullWidth * 100;
             });
         }
         this.viewFields.forEach((_f) => {
-            length[_f.key] = Math.round(length[_f.key] / fullWidth * 100);
+            length[_f.key] = length[_f.key] / fullWidth * 100;
         });
         this.length = length;
     }

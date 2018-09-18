@@ -19,15 +19,18 @@ export const COLLISIONS_SEV_DICT: IDictionaryDescriptor = Object.assign({}, LINE
         key: 'REASON_NUM',
         type: 'number',
         required: true,
+        length: 5,
         title: '№',
     }, {
         key: 'COLLISION_NAME',
         type: 'string',
         title: 'Название коллизии',
+        length: 100,
         pattern: NOT_EMPTY_STRING
     }, {
         key: 'RESOLVE_TYPE',
         type: 'number',
+        length: 100,
         title: 'Способ разрешения',
         required: true,
     }, {
