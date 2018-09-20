@@ -3767,6 +3767,7 @@ export interface NP_RESULT_RASSLED_CL extends ILinearCL {
 }
 
 export interface NP_OPF_CL extends ILinearCL {
+    CODE: string;
     ISN_LCLASSIF: number;
     CLASSIF_NAME: string;
     NOTE: string;
