@@ -12,6 +12,7 @@ export const RESPRJ_PRIORITY_DICT: IDictionaryDescriptor = Object.assign({}, LIN
         Object.assign({}, COMMON_FIELD_NAME, {
             isUnique: true,
             uniqueInDict: true,
+            length: 250
         }), {
             key: 'WEIGHT',
             title: 'Вес',

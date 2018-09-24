@@ -68,26 +68,15 @@ export const DEPARTMENTS_DICT: IDepartmentDictionaryDescriptor = {
         title: 'Parent ID',
         length: 248,
     },
-        COMMON_FIELD_CODE,
+    Object.assign({}, COMMON_FIELD_CODE, {length: 20}),
     Object.assign({}, COMMON_FIELD_NAME, {
         key: 'title',
         title: 'Краткое наименование подразделения',
         foreignKey: 'CLASSIF_NAME',
         length: 255,
         required: true,
-        // isUnique: true,
-        // uniqueInDict: true,
         forNode: false,
     }),
-    /*
-    Object.assign({}, COMMON_FIELD_NAME, {
-        key: 'fio',
-        title: 'Фамилия И.О. - должность',
-        foreignKey: 'CLASSIF_NAME',
-        length: 255,
-        forNode: false,
-    },
-    */
     {
         key: 'SURNAME',
         title: 'Фамилия И.О.',

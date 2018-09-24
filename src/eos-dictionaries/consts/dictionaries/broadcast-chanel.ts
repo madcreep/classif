@@ -1,7 +1,7 @@
 import { IDictionaryDescriptor } from 'eos-dictionaries/interfaces';
 import { LINEAR_TEMPLATE } from './_linear-template';
 import { EMAIL } from '../input-validation';
-import { COMMON_FIELD_NAME } from './_common';
+import {COMMON_FIELD_NAME, COMMON_FIELD_NOTE} from './_common';
 
 export const BROADCAST_CHANEL_DICT: IDictionaryDescriptor = Object.assign({}, LINEAR_TEMPLATE, {
     id: 'brodcast-chanel',
@@ -13,15 +13,18 @@ export const BROADCAST_CHANEL_DICT: IDictionaryDescriptor = Object.assign({}, LI
     defaultOrder: 'CHANNEL_TYPE',
     title: 'Каналы передачи сообщений',
     fields: LINEAR_TEMPLATE.fields.concat([
-        COMMON_FIELD_NAME,
+        Object.assign({}, COMMON_FIELD_NAME, {length: 100}),
+        Object.assign({}, COMMON_FIELD_NOTE, {length: 150}),
     {
         key: 'CHANNEL_TYPE',
         type: 'string',
         title: 'Тип канала',
+        length: 40,
         required: true,
     }, {
         key: 'PARAMS',
         type: 'string',
+        length: 60,
         title: 'Параметры доставки'
     }, {
         key: 'email',

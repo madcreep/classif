@@ -2156,6 +2156,7 @@ const commonMeta = {
     NP_OPF_CL: {
         pk: 'ISN_LCLASSIF',
         properties: {
+            CODE: _t.s,
             ISN_LCLASSIF: _t.i,
             PROTECTED: _t.i,
             DELETED: _t.i,

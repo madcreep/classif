@@ -1,19 +1,13 @@
-<ng-template #markTemp>Снять<br>пометку</ng-template>
-<ng-template #notMarkTemp>Пометить<br>элемент</ng-template>
-<div #item
-     class="eos-node-list-item secondary-text"
+<div #item class="eos-node-list-item secondary-text"
      [ngClass]="{'highlighted': node.isSelected, 'flat-child': node.isActive}">
-    <div [ngClass]="{'deleted': node.isDeleted}"
-         class="node-list-item clearfix">
-        <div *ngIf="params?.markItems"
-             class="node-marker pull-left">
-            <label *ngIf="params?.markItems"
-                   class="checkbox"
-                   containerClass="tooltip-info"
-                   container="body"
-                   placement="bottom"><input type="checkbox"[ngModel]="node.marked" (ngModelChange)="markNode($event)"><span></span></label>
+    <div [ngClass]="{'deleted': node.isDeleted}" class="node-list-item clearfix">
+        <div *ngIf="params?.markItems" class="node-marker pull-left">
+            <label *ngIf="params?.markItems" class="checkbox">
+                <input type="checkbox" [ngModel]="node.marked" (ngModelChange)="markNode($event)">
+                <span></span>
+            </label>
         </div>
-        <div class="node-row clearfix"
+        <div class="node-row pull-left"
              (click)="selectNode($event)"
              (dblclick)="viewNode($event)">
             <eos-node-field *ngFor="let field of viewFields"
@@ -22,7 +16,6 @@
                             [field]="field"
                             [node]="node"
                             [width]="length[field.key]"
-                            [tooltip]="node.title" placement="bottom" containerClass="tooltip-info" container="body"
                             (view)="viewNode($event, true)"></eos-node-field>
             <eos-node-field *ngFor="let field of custom"
                             class="pull-left"
@@ -30,7 +23,6 @@
                             [width]="length[field.key]"
                             [field]="field"
                             [node]="node"
-                            [tooltip]="node.title" placement="bottom" containerClass="tooltip-info" container="body"
                             (view)="viewNode($event, true)"></eos-node-field>
         </div>
     </div>
