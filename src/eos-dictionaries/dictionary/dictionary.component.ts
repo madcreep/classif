@@ -368,7 +368,7 @@ export class DictionaryComponent implements OnDestroy, DoCheck, AfterViewInit {
     }
 
     private _editNode() {
-        const node = this._dictSrv.currentNode;
+        const node = this._dictSrv.listNode;
         if (node) {
             if (node.data.PROTECTED) {
                 this._msgSrv.addNewMessage(DANGER_EDIT_ROOT_ERROR);
