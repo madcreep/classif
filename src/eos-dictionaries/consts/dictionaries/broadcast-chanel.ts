@@ -11,7 +11,7 @@ export const BROADCAST_CHANEL_DICT: IDictionaryDescriptor = Object.assign({}, LI
     iconName: 'eos-icon-move-2d-blue',
     keyField: 'ISN_LCLASSIF',
     defaultOrder: 'CHANNEL_TYPE',
-    title: 'Каналы передачи сообщений (NEW)',
+    title: 'Каналы передачи сообщений',
     fields: LINEAR_TEMPLATE.fields.concat([
         COMMON_FIELD_NAME,
     {

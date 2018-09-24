@@ -16,7 +16,7 @@ export class DictionariesComponent {
     ) {
         this._dictSrv.closeDictionary();
 
-        var dictList;
+        let dictList;
         if (this._router.url === '/spravochniki') {
             dictList = this._dictSrv.getDictionariesList();
         } else if (this._router.url === '/spravochniki/nadzor') {

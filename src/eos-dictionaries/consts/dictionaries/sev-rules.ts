@@ -8,7 +8,7 @@ export const RULES_SEV_DICT: IDictionaryDescriptor = Object.assign({}, LINEAR_TE
     actions: LINEAR_TEMPLATE.actions.concat(['tableCustomization']), // ??
     visible: true,
     iconName: 'eos-icon-rules-blue',
-    title: 'Правила СЭВ (NEW)',
+    title: 'Правила СЭВ',
     keyField: 'ISN_LCLASSIF',
     fields: LINEAR_TEMPLATE.fields.concat([{
         key: 'RULE_KIND',

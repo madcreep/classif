@@ -3637,7 +3637,7 @@ export interface DEPARTMENT_REPL extends IEnt {
     END_DATE: number;
 }
 
-//NADZOR
+// NADZOR
 export interface NP_ADDRESS_VID_CL extends ILinearCL {
 
     ISN_LCLASSIF: number;
@@ -3860,7 +3860,7 @@ export interface NP_OB_OSNOV_CL extends ILinearCL {
     WEIGHT: number;
     USE_C: boolean;
     USE_A: boolean;
-    USE_N: boolean,
+    USE_N: boolean;
     USE_VP: boolean;
     USE_NP: boolean;
 }

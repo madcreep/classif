@@ -6,7 +6,7 @@ export const CITSTATUS_DICT: ITreeDictionaryDescriptor = {
     id: 'cistatus',
     apiInstance: 'CITSTATUS_CL',
     dictType: E_DICT_TYPE.tree,
-    title: 'Статусы заявителей',
+    title: 'Статус заявителя',
     defaultOrder: 'CLASSIF_NAME',
     visible: true,
     iconName: 'eos-icon-applicant-status-blue',

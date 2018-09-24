@@ -10,7 +10,7 @@ export const COLLISIONS_SEV_DICT: IDictionaryDescriptor = Object.assign({}, LINE
     iconName: 'eos-icon-alert-blue',
     defaultOrder: 'COLLISION_NAME',
     keyField: 'COLLISION_CODE',
-    title: 'Коллизии СЭВ (NEW)',
+    title: 'Коллизии СЭВ',
     searchConfig: [],
     fields: [{
         key: 'COLLISION_CODE',

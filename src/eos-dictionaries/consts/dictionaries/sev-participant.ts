@@ -5,7 +5,7 @@ import { NOT_EMPTY_STRING } from '../input-validation';
 export const PARTICIPANT_SEV_DICT: IDictionaryDescriptor = Object.assign({}, LINEAR_TEMPLATE, {
     id: 'sev-participant',
     apiInstance: 'SEV_PARTICIPANT',
-    title: 'Участники СЭВ (NEW)',
+    title: 'Участники СЭВ',
     actions: LINEAR_TEMPLATE.actions.concat(['tableCustomization']), // ??
     visible: true,
     iconName: 'eos-icon-shared-folder-blue',
@@ -18,6 +18,8 @@ export const PARTICIPANT_SEV_DICT: IDictionaryDescriptor = Object.assign({}, LIN
         required: true,
         pattern: NOT_EMPTY_STRING
     }, {
+        // key: 'channel',
+        // type: 'dictionary',
         key: 'ISN_CHANNEL',
         type: 'number',
         title: 'Канал передачи сообщений',

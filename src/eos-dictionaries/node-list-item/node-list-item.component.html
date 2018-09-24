@@ -9,7 +9,6 @@
              class="node-marker pull-left">
             <label *ngIf="params?.markItems"
                    class="checkbox"
-                   [tooltip]="node.marked ? markTemp : notMarkTemp"
                    containerClass="tooltip-info"
                    container="body"
                    placement="bottom"><input type="checkbox"[ngModel]="node.marked" (ngModelChange)="markNode($event)"><span></span></label>
