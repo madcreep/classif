@@ -394,7 +394,7 @@ export class EosDictService {
         const dictionary = this.currentDictionary;
         if (dictionary) {
             if (!this._listNode || this._listNode.id !== nodeId) {
-                this.updateViewParameters({ updatingInfo: true });
+                this.updateViewParameters({ updatingInfo: false });
                 const aNode = dictionary.getNode(nodeId);
                 if (aNode) {
                     this._openNode(aNode);
