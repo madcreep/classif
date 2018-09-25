@@ -34,7 +34,10 @@ export class LoginFormComponent implements AfterViewInit {
         this.loginElementRef.nativeElement.focus();
     }
 
-    login(): void {
+    login(event): void {
+        if (event && event.key !== 'Enter') {
+            return;
+        }
         if (!this.inProcess) {
             this.inProcess = true;
             this.haveErr = false;
