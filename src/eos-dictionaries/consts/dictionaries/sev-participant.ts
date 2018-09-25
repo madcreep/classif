@@ -1,7 +1,7 @@
 import { IDictionaryDescriptor } from 'eos-dictionaries/interfaces';
 import { LINEAR_TEMPLATE } from './_linear-template';
 import { NOT_EMPTY_STRING } from '../input-validation';
-import { BROADCAST_CHANEL_DICT } from './broadcast-chanel';
+import { BROADCAST_CHANNEL_DICT } from './broadcast-channel';
 
 export const PARTICIPANT_SEV_DICT: IDictionaryDescriptor = Object.assign({}, LINEAR_TEMPLATE, {
     id: 'sev-participant',
@@ -21,7 +21,7 @@ export const PARTICIPANT_SEV_DICT: IDictionaryDescriptor = Object.assign({}, LIN
     }, {
         key: 'ISN_CHANNEL',
         type: 'select',
-        dictionaryId: BROADCAST_CHANEL_DICT.id,
+        dictionaryId: BROADCAST_CHANNEL_DICT.id,
         title: 'Канал передачи сообщений',
         required: true,
         options: [],
