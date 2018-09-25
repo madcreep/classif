@@ -77,11 +77,13 @@ export class EosDataConvertService {
                                     if (descr[_key].dictionaryId !== undefined) {
                                         const dict = new EosDictionary(descr[_key].dictionaryId, dictSrv);
                                         dict.init()
-                                        .then(() => {
-                                            dict.nodes.forEach((node) => {
-                                                options.push(...[{value: node.originalId, title: node.title}]);
+                                            .then(() => {
+                                                dict.nodes.forEach((node) => {
+                                                    if (node.id) {
+                                                        options.push(...[{value: node.originalId, title: node.title}]);
+                                                    }
+                                                });
                                             });
-                                        });
                                     } else {
                                         options.push(...descr[_key].options);
                                     }
