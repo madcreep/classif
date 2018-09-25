@@ -18,7 +18,7 @@ export class LoginFormComponent implements AfterViewInit {
     @Output() logged: EventEmitter<boolean> = new EventEmitter<boolean>();
 
     @ViewChild('errTooltip') errTooltip;
-    @ViewChild('login') private loginElementRef: ElementRef;
+    @ViewChild('loginField') private loginElementRef: ElementRef;
 
     constructor(
         private _profileSrv: EosUserProfileService
