@@ -1,4 +1,4 @@
-<form #loginForm="ngForm">
+<form #loginForm="ngForm" (keydown)="login()">
     <div class="logo">
         <div class="logo-img"></div>
         <div class="logo-text">Дело</div>
@@ -13,7 +13,8 @@
             id="user-name"
             required
             name="userName"
-            autocomplete="on" />
+            autocomplete="on"
+            #login />
     </div>
     <div class="form-group" >
         <label for="password">Пароль</label>
@@ -32,9 +33,9 @@
             container="body"
             containerClass="tooltip-error"
             triggers="" />
-        <button class="btn eye" (mousedown)="showPass()" (mouseup)="hidePass()">
-            <span class="eos-icon eos-icon-show-blue"></span>
-        </button>
+        <div class="btn eye" (mousedown)="showPass()" (mouseup)="hidePass()">
+            <i class="eos-icon" [ngClass]="{'eos-icon-show-blue': hidePassword, 'eos-icon-show-white': !hidePassword}"></i>
+        </div>
     </div>
     <button type="submit"
         class="btn btn-primary-full"
