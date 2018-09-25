@@ -17,6 +17,7 @@ export class FieldDescriptor implements IFieldDescriptorBase {
     readonly forNode?: boolean;
     readonly default?: any;
     readonly dictionaryId?: string;
+    readonly password?: boolean;
 
     constructor(data: IFieldDescriptor) {
         if (data.key) {
@@ -55,5 +56,7 @@ export class FieldDescriptor implements IFieldDescriptorBase {
         this.forNode = data.forNode;
         this.default = data.default;
         this.dictionaryId = data.dictionaryId;
+
+        this.password = !!data.password;
     }
 }

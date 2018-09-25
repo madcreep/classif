@@ -15,7 +15,7 @@ export const ENCRYPTION_TYPE: Array<OptionDiscription> = [{
     title: 'StartTLS'
 }];
 
-export const CHANEL_TYPE: Array<OptionDiscription> = [{
+export const CHANNEL_TYPE: Array<OptionDiscription> = [{
     value: 0,
     title: 'E-mail'
 }, {
@@ -23,7 +23,12 @@ export const CHANEL_TYPE: Array<OptionDiscription> = [{
     title: 'File System'
 }];
 
-export const AUTH_METHOD: Array<OptionDiscription> = [];
+export const AUTH_METHOD: Array<OptionDiscription> = [
+    { value: 0, title: 'Авторизация не требуется', },
+    { value: 1, title: 'Авторизация Windows' },
+    { value: 2, title: 'Авторизация логин/пароль' }
+
+];
 
 export const TYPE_OF_RULE: Array<OptionDiscription> = [{
     value: 0,

@@ -1,0 +1,115 @@
+import { IDictionaryDescriptor } from 'eos-dictionaries/interfaces';
+import { LINEAR_TEMPLATE } from './_linear-template';
+import { EMAIL } from '../input-validation';
+import {COMMON_FIELD_NAME, COMMON_FIELD_NOTE} from './_common';
+import {AUTH_METHOD, CHANNEL_TYPE, ENCRYPTION_TYPE} from '../sev-const';
+
+export const BROADCAST_CHANNEL_DICT: IDictionaryDescriptor = Object.assign({}, LINEAR_TEMPLATE, {
+    id: 'broadcast-channel',
+    apiInstance: 'SEV_CHANNEL',
+    actions: LINEAR_TEMPLATE.actions.concat(['tableCustomization']),
+    visible: true,
+    iconName: 'eos-icon-move-2d-blue',
+    keyField: 'ISN_LCLASSIF',
+    defaultOrder: 'CHANNEL_TYPE',
+    title: 'Каналы передачи сообщений',
+    fields: LINEAR_TEMPLATE.fields.concat([
+        Object.assign({}, COMMON_FIELD_NAME, {length: 100}),
+        Object.assign({}, COMMON_FIELD_NOTE, {length: 150}),
+    {
+        key: 'CHANNEL_TYPE',
+        type: 'select',
+        title: 'Тип канала',
+        options: CHANNEL_TYPE,
+        required: true,
+        default: 0
+    }, {
+        key: 'PARAMS',
+        type: 'string',
+        length: 2048,
+        title: 'Параметры доставки'
+    }, {
+        key: 'SMTP_EMAIL',
+        type: 'string',
+        title: 'E-mail отправителя',
+        length: 100,
+        pattern: EMAIL,
+     }, {
+        key: 'SMTP_SERVER',
+        type: 'string',
+        title: 'SMTP сервер',
+        length: 255,
+    }, {
+        key: 'SMTP_PORT',
+        type: 'number',
+        title: 'SMTP порт',
+    }, {
+        key: 'ENCRYPTION_TYPE',
+        type: 'select',
+        options: ENCRYPTION_TYPE,
+        title: 'Использовать следущий тип шифрования:',
+        default: 0
+    }, {
+        key: 'AUTH_METHOD',
+        type: 'select',
+        options: AUTH_METHOD,
+        title: 'Метод аутентификации',
+        default: 0
+    }, {
+        key: 'SMTP_LOGIN',
+        type: 'string',
+        length: 100,
+        title: 'SMTP логин',
+    }, {
+        key: 'SMTP_PASSWORD',
+        type: 'string',
+        length: 100,
+        title: 'SMTP пароль',
+        password: true
+    }, {
+        key: 'SMTP_INTERVAL',
+        type: 'number',
+        title: 'Задержка, мин',
+    }, {
+        key: 'POP3_SERVER',
+        type: 'string',
+        title: 'POP3 сервер',
+        length: 255,
+    }, {
+        key: 'POP3_PORT',
+        type: 'number',
+        title: 'POP3 порт',
+    }, {
+        key: 'POP3_ENCRYPTION',
+        type: 'boolean',
+        title: 'Требуется шифрование',
+    }, {
+        key: 'POP3_LOGIN',
+        type: 'string',
+        length: 100,
+        title: 'POP3 логин',
+    }, {
+        key: 'POP3_PASSWORD',
+        type: 'string',
+        password: true,
+        length: 100,
+        title: 'POP3 пароль',
+    }, {
+        key: 'OUT_FOLDER',
+        type: 'string',
+        title: 'Папка исходящих сообщений',
+    }, {
+        key: 'IN_FOLDER',
+        type: 'string',
+        title: 'Папка входящих сообщений',
+    }]),
+    editFields: ['CLASSIF_NAME', 'NOTE', 'CHANNEL_TYPE',
+        'SMTP_EMAIL', 'SMTP_SERVER', 'SMTP_PORT', 'ENCRYPTION_TYPE', 'AUTH_METHOD', 'SMTP_LOGIN', 'SMTP_PASSWORD', 'SMTP_INTERVAL',
+        'POP3_SERVER', 'POP3_PORT', 'POP3_ENCRYPTION', 'POP3_LOGIN', 'POP3_PASSWORD',
+        'OUT_FOLDER', 'IN_FOLDER'
+    ],
+    listFields: ['CLASSIF_NAME', 'CHANNEL_TYPE'],
+    allVisibleFields: ['NOTE', 'PARAMS'],
+    quickViewFields: ['CLASSIF_NAME', 'NOTE', 'CHANNEL_TYPE'],
+    searchFields: [],
+});

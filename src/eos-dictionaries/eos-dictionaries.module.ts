@@ -48,6 +48,7 @@ import { NodeInfoComponent } from './node-info/node-info.component';
 import { CabinetCardEditComponent } from './card-views/cabinet-card-edit.component';
 import { SandwichComponent } from './sandwich/sandwich.component';
 import { SecurityCardEditComponent } from './card-views/security-card-edit.component';
+import { BroadcastChannelCardEditComponent } from './card-views/broadcast-channel-card-edit.component';
 import { SecurityNodeInfoComponent } from './node-info/security-node-info.component';
 import { SimpleCardEditComponent } from './card-views/simple-card-edit.component';
 import { TreeComponent } from './tree/tree.component';
@@ -92,6 +93,7 @@ import { EosSandwichService } from './services/eos-sandwich.service';
         SecurityCardEditComponent,
         SecurityNodeInfoComponent,
         CreateNodeComponent,
+        BroadcastChannelCardEditComponent
     ],
     entryComponents: [
         ColumnSettingsComponent,

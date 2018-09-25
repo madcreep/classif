@@ -47,6 +47,7 @@ export class EosDataConvertService {
                                             || descr[_key].default,
                                         length: descr[_key].length,
                                         disabled: !editMode,
+                                        password: descr[_key].password
                                     });
                                     break;
                                 case E_FIELD_TYPE.text:

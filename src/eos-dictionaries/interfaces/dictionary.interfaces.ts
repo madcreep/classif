@@ -54,6 +54,7 @@ export interface IFieldDescriptor {
     forNode?: boolean;
     default?: any;
     dictionaryId?: string;
+    password?: boolean;
 }
 
 export interface IFieldDescriptorBase {
@@ -73,6 +74,7 @@ export interface IFieldDescriptorBase {
     readonly forNode?: boolean;
     readonly default?: any;
     readonly dictionaryId?: string;
+    readonly password?: boolean;
 }
 
 export interface IFieldView extends IFieldDescriptorBase {

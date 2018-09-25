@@ -38,6 +38,13 @@
                     [inputs]="inputs"
                     [data]="data"
                     [editMode]="editMode"></eos-security-card-edit>
+                <eos-broadcast-channel-card-edit *ngSwitchCase="'broadcast-channel'"
+                                        #cardEditEl
+                                        class="broadcast-channel-card-edit simple-card-edit"
+                                        [form]="form"
+                                        [inputs]="inputs"
+                                        [data]="data"
+                                        [editMode]="editMode"></eos-broadcast-channel-card-edit>
                 <eos-docgroup-card *ngSwitchCase="'docgroup'"
                     #cardEditEl
                     class="docgroup-card simple-card-edit"
