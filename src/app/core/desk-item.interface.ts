@@ -1,6 +1,6 @@
 export interface IDeskItem {
     url: string;
     title: any;
-    iconName: string;
+    iconName?: string;
     /* fullTitle: string; */
 }
