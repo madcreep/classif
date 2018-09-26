@@ -3,7 +3,7 @@
 .htaccess
 .vscode
 stage_deploy.sh
-node_modules
+node_modules/*
 jspm_packages
 link-checker-results.txt
 **/*npm-debug.log*
