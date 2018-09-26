@@ -22,17 +22,18 @@ export const BROADCAST_CHANNEL_DICT: IDictionaryDescriptor = Object.assign({}, L
         title: 'Тип канала',
         options: CHANNEL_TYPE,
         required: true,
-        default: 0
+        default: 'email',
+        length: 200
     }, {
         key: 'PARAMS',
-        type: 'string',
-        length: 2048,
-        title: 'Параметры доставки'
+        type: 'xml',
+        length: 1,
+        title: 'Параметры доставки',
     }, {
         key: 'SMTP_EMAIL',
         type: 'string',
         title: 'E-mail отправителя',
-        length: 100,
+        length: 200,
         pattern: EMAIL,
      }, {
         key: 'SMTP_SERVER',
@@ -43,6 +44,7 @@ export const BROADCAST_CHANNEL_DICT: IDictionaryDescriptor = Object.assign({}, L
         key: 'SMTP_PORT',
         type: 'number',
         title: 'SMTP порт',
+        default: 25
     }, {
         key: 'ENCRYPTION_TYPE',
         type: 'select',
@@ -67,7 +69,7 @@ export const BROADCAST_CHANNEL_DICT: IDictionaryDescriptor = Object.assign({}, L
         title: 'SMTP пароль',
         password: true
     }, {
-        key: 'SMTP_INTERVAL',
+        key: 'SMTP_DELAY',
         type: 'number',
         title: 'Задержка, мин',
     }, {
@@ -79,6 +81,7 @@ export const BROADCAST_CHANNEL_DICT: IDictionaryDescriptor = Object.assign({}, L
         key: 'POP3_PORT',
         type: 'number',
         title: 'POP3 порт',
+        default: 110
     }, {
         key: 'POP3_ENCRYPTION',
         type: 'boolean',
@@ -104,12 +107,12 @@ export const BROADCAST_CHANNEL_DICT: IDictionaryDescriptor = Object.assign({}, L
         title: 'Папка входящих сообщений',
     }]),
     editFields: ['CLASSIF_NAME', 'NOTE', 'CHANNEL_TYPE',
-        'SMTP_EMAIL', 'SMTP_SERVER', 'SMTP_PORT', 'ENCRYPTION_TYPE', 'AUTH_METHOD', 'SMTP_LOGIN', 'SMTP_PASSWORD', 'SMTP_INTERVAL',
+        'SMTP_EMAIL', 'SMTP_SERVER', 'SMTP_PORT', 'ENCRYPTION_TYPE', 'AUTH_METHOD', 'SMTP_LOGIN', 'SMTP_PASSWORD', 'SMTP_DELAY',
         'POP3_SERVER', 'POP3_PORT', 'POP3_ENCRYPTION', 'POP3_LOGIN', 'POP3_PASSWORD',
-        'OUT_FOLDER', 'IN_FOLDER'
+        'OUT_FOLDER', 'IN_FOLDER', 'PARAMS'
     ],
-    listFields: ['CLASSIF_NAME', 'CHANNEL_TYPE'],
-    allVisibleFields: ['NOTE', 'PARAMS'],
+    listFields: ['CLASSIF_NAME', 'CHANNEL_TYPE', 'SMTP_EMAIL'],
+    allVisibleFields: ['NOTE'],
     quickViewFields: ['CLASSIF_NAME', 'NOTE', 'CHANNEL_TYPE'],
     searchFields: [],
 });

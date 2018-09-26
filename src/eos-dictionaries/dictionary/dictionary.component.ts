@@ -33,6 +33,7 @@ import { RECENT_URL } from 'app/consts/common.consts';
 import { NodeListComponent } from '../node-list/node-list.component';
 import { CreateNodeComponent } from '../create-node/create-node.component';
 import { IPaginationConfig } from '../node-list-pagination/node-list-pagination.interfaces';
+import {CreateNodeBroadcastChannelComponent} from '../create-node-broadcast-channel/create-node-broadcast-channel.component';
 
 @Component({
     templateUrl: 'dictionary.component.html',
@@ -329,7 +330,11 @@ export class DictionaryComponent implements OnDestroy, DoCheck, AfterViewInit {
      * @description Open modal with CreateNodeComponent, fullfill CreateNodeComponent data
      */
     private _openCreate(recParams: any) {
-        this.modalWindow = this._modalSrv.show(CreateNodeComponent, { class: 'creating-modal' });
+        if (this.dictionary.descriptor.id === 'broadcast-channel') {
+            this.modalWindow = this._modalSrv.show(CreateNodeBroadcastChannelComponent, {class: 'creating-modal'});
+        } else {
+            this.modalWindow = this._modalSrv.show(CreateNodeComponent, {class: 'creating-modal'});
+        }
         const dictionary = this._dictSrv.currentDictionary;
         const editDescr = dictionary.getEditDescriptor();
         const data = dictionary.getNewNode({ rec: recParams }, this.treeNode);

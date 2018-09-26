@@ -60,6 +60,8 @@ import { EosDataConvertService } from './services/eos-data-convert.service';
 import { EosDepartmentsService } from './services/eos-department-service';
 import { EosDictService } from './services/eos-dict.service';
 import { EosSandwichService } from './services/eos-sandwich.service';
+import {CreateNodeBroadcastChannelComponent} from './create-node-broadcast-channel/create-node-broadcast-channel.component';
+import {EosBroadcastChannelService} from './services/eos-broadcast-channel.service';
 
 @NgModule({
     declarations: [
@@ -93,11 +95,13 @@ import { EosSandwichService } from './services/eos-sandwich.service';
         SecurityCardEditComponent,
         SecurityNodeInfoComponent,
         CreateNodeComponent,
+        CreateNodeBroadcastChannelComponent,
         BroadcastChannelCardEditComponent
     ],
     entryComponents: [
         ColumnSettingsComponent,
         CreateNodeComponent,
+        CreateNodeBroadcastChannelComponent,
         DocgroupTemplateConfigComponent,
     ],
     imports: [
@@ -128,6 +132,7 @@ import { EosSandwichService } from './services/eos-sandwich.service';
         DictionaryDescriptorService,
         EosDataConvertService,
         EosDepartmentsService,
+        EosBroadcastChannelService,
         EosDictService,
         EosSandwichService,
     ],

@@ -16,11 +16,11 @@ export const ENCRYPTION_TYPE: Array<OptionDiscription> = [{
 }];
 
 export const CHANNEL_TYPE: Array<OptionDiscription> = [{
-    value: 0,
+    value: 'email',
     title: 'E-mail'
 }, {
-    value: 1,
-    title: 'File System'
+    value: 'FileSystem',
+    title: 'Файловая система'
 }];
 
 export const AUTH_METHOD: Array<OptionDiscription> = [

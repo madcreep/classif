@@ -14,9 +14,12 @@ export class BroadcastChannelCardEditComponent extends BaseCardEditComponent {
     }
 
     get isEmail(): boolean {
-        return this.getValue('rec.CHANNEL_TYPE') === 0;
+        return this.getValue('rec.CHANNEL_TYPE') === 'email';
     }
 
+    get authMethod(): number {
+        return +this.getValue('rec.AUTH_METHOD');
+    }
 
     setTab(idx: number) {
         this.currTab = idx;

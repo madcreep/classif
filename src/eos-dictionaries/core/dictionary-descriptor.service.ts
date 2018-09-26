@@ -10,6 +10,8 @@ import { OrganizationDictionaryDescriptor } from 'eos-dictionaries/core/organiza
 import { CabinetDictionaryDescriptor } from 'eos-dictionaries/core/cabinet-dictionary-descriptor';
 import { DocgroupDictionaryDescriptor } from 'eos-dictionaries/core/docgroup-dictionary-descriptor';
 import {NADZORDICTIONARIES} from '../consts/dictionaries/nadzor.consts';
+import {BroadcastChanelDictionaryDescriptor} from './broadcast-chanel-dictionary-descriptor';
+import {EosBroadcastChannelService} from '../services/eos-broadcast-channel.service';
 
 @Injectable()
 export class DictionaryDescriptorService {
@@ -18,6 +20,7 @@ export class DictionaryDescriptorService {
 
     constructor(
         private apiSrv: PipRX,
+        private _channelSrv: EosBroadcastChannelService
     ) {
         this._mDicts = new Map<string, IDictionaryDescriptor>();
         this._mDictClasses = new Map<string, AbstractDictionaryDescriptor>();
@@ -68,6 +71,9 @@ export class DictionaryDescriptorService {
                         break;
                     case 'organization':
                         res = new OrganizationDictionaryDescriptor(descr, this.apiSrv);
+                        break;
+                    case 'broadcast-channel':
+                        res = new BroadcastChanelDictionaryDescriptor(descr, this.apiSrv, this._channelSrv);
                         break;
                     case 'cabinet':
                         res = new CabinetDictionaryDescriptor(descr, this.apiSrv);
