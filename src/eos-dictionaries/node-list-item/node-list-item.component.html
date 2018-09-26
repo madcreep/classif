@@ -7,6 +7,10 @@
                 <span></span>
             </label>
         </div>
+        <div *ngIf="!params?.markItems"
+             class="node-left">
+        </div>
+
         <div class="node-row pull-left"
              (click)="selectNode($event)"
              (dblclick)="viewNode($event)">

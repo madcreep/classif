@@ -752,7 +752,8 @@ export class EosDictService {
             searchResults: false,
             updatingInfo: false,
             updatingList: false,
-            hasMarked: false
+            hasMarked: false,
+            hideTopMenu: false
         };
     }
 

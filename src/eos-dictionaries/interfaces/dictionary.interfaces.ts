@@ -107,6 +107,8 @@ export interface IDictionaryDescriptor {
     shortQuickViewFields: any;
     editFields: any;
     listFields: any;
+
+    hideTopMenu?: boolean;
 }
 
 export interface ITreeDictionaryDescriptor extends IDictionaryDescriptor {

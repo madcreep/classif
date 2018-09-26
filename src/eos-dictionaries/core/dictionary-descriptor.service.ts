@@ -12,6 +12,7 @@ import { DocgroupDictionaryDescriptor } from 'eos-dictionaries/core/docgroup-dic
 import {NADZORDICTIONARIES} from '../consts/dictionaries/nadzor.consts';
 import {BroadcastChanelDictionaryDescriptor} from './broadcast-chanel-dictionary-descriptor';
 import {EosBroadcastChannelService} from '../services/eos-broadcast-channel.service';
+import {SevCollisionsDictionaryDescriptor} from './sev-collisions-dictionary-descriptor';
 
 @Injectable()
 export class DictionaryDescriptorService {
@@ -80,6 +81,9 @@ export class DictionaryDescriptorService {
                         break;
                     case 'docgroup':
                         res = new DocgroupDictionaryDescriptor(descr, this.apiSrv);
+                        break;
+                    case 'sev-collisions':
+                        res = new SevCollisionsDictionaryDescriptor(descr, this.apiSrv);
                         break;
                 }
 

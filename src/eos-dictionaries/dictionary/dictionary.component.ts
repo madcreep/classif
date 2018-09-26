@@ -115,6 +115,7 @@ export class DictionaryComponent implements OnDestroy, DoCheck, AfterViewInit {
         _dictSrv.dictionary$.takeUntil(this.ngUnsubscribe)
             .subscribe((dictionary: EosDictionary) => {
                 if (dictionary) {
+                    this.params.hideTopMenu = dictionary.descriptor.hideTopMenu;
                     this.dictionary = dictionary;
                     this.dictionaryId = dictionary.id;
                     if (dictionary.root) {
