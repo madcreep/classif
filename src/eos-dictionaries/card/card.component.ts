@@ -392,6 +392,7 @@ export class CardComponent implements CanDeactivateGuard, OnDestroy {
             this._deskSrv.addRecentItem({
                 url: this._router.url,
                 title: node.title,
+                iconName: '',
             });
             this._clearEditingCardLink();
         } else {

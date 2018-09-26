@@ -45,7 +45,7 @@
     <div class="item-content xl-font block edited"
         *ngIf="editing(item.value)">
         <span class="icon-wrapper">
-            <span class="icon eos-icon eos-icon-bin-blue"></span>
+            <span class="icon eos-icon {{item.value.iconName}}"></span>
         </span>
         <input id="title"
             name="title"
@@ -88,7 +88,7 @@
         containerClass="tooltip-info word-break"
         container="body">
         <span class="icon-wrapper">
-            <span class="icon eos-icon eos-icon-bin-blue"></span>
+            <span class="icon eos-icon {{item.value.iconName}}"></span>
         </span>
         <span [hidden]="editing(item.value)"
             class="text">
