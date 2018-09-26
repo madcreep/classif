@@ -38,7 +38,7 @@ export const RULES_SEV_DICT: IDictionaryDescriptor = Object.assign({}, LINEAR_TE
             required: true,
         }, {
             key: 'DUE_DOCGROUP',
-            type: 'string',
+            type: 'select',
             title: 'Группа документов',
         }, {
             key: 'FILTER_CONFIG',
