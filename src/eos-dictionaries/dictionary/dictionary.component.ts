@@ -115,7 +115,9 @@ export class DictionaryComponent implements OnDestroy, DoCheck, AfterViewInit {
         _dictSrv.dictionary$.takeUntil(this.ngUnsubscribe)
             .subscribe((dictionary: EosDictionary) => {
                 if (dictionary) {
-                    this.params.hideTopMenu = dictionary.descriptor.hideTopMenu;
+                    if (this.params !== undefined) {
+                        this.params.hideTopMenu = dictionary.descriptor.hideTopMenu === true;
+                    }
                     this.dictionary = dictionary;
                     this.dictionaryId = dictionary.id;
                     if (dictionary.root) {
@@ -131,8 +133,12 @@ export class DictionaryComponent implements OnDestroy, DoCheck, AfterViewInit {
             .subscribe((dictionary: EosDictionary) => {
                 if (dictionary) {
                     this.dictMode = this._dictSrv.dictMode;
+                    const setParams = this.params === undefined;
                     this.params = Object.assign({}, this.params, { userSort: dictionary.userOrdered });
                     this.params.markItems = dictionary.canDo(E_RECORD_ACTIONS.markRecords);
+                    if (setParams) {
+                        this.params.hideTopMenu = dictionary.descriptor.hideTopMenu;
+                    }
                     this.hasCustomTable = dictionary.canDo(E_RECORD_ACTIONS.tableCustomization);
                 }
             });
