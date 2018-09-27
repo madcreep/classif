@@ -434,7 +434,6 @@ export class EosDictService {
                                 resNode = dictionary.getNode(node.id);
                             }
                         });
-
                     })
                     .then(() => this._reloadList())
                     .then(() => resNode);
