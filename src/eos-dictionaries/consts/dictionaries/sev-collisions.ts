@@ -59,5 +59,5 @@ export const COLLISIONS_SEV_DICT: IDictionaryDescriptor = Object.assign({}, LINE
     treeFields: ['COLLISION_NAME'],
     editFields: [],
     listFields: ['REASON_NUM', 'COLLISION_NAME', 'resolve_text'],
-    allVisibleFields: [],
+    allVisibleFields: ['COLLISION_NAME'],
 });
