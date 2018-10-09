@@ -14,6 +14,10 @@ export const ADDR_CATEGORY_DICT: IDictionaryDescriptor = Object.assign({}, LINEA
             isUnique: true,
             uniqueInDict: true,
         })],
+    listFields: ['CLASSIF_NAME'],
+    allVisibleFields: ['NOTE'],
+    quickViewFields: ['CLASSIF_NAME', 'NOTE'],
+    searchFields: ['CLASSIF_NAME'],
 });
 
 export const ADDR_CATEGORY_OPTIONS: ISelectOption[] = [];

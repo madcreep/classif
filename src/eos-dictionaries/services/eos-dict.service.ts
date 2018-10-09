@@ -434,7 +434,6 @@ export class EosDictService {
                                 resNode = dictionary.getNode(node.id);
                             }
                         });
-
                     })
                     .then(() => this._reloadList())
                     .then(() => resNode);
@@ -752,7 +751,8 @@ export class EosDictService {
             searchResults: false,
             updatingInfo: false,
             updatingList: false,
-            hasMarked: false
+            hasMarked: false,
+            hideTopMenu: false
         };
     }
 

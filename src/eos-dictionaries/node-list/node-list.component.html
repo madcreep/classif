@@ -10,6 +10,9 @@
                     <span></span>
                 </label>
             </div>
+            <div *ngIf="!params.markItems"
+                 class="node-left">
+            </div>
             <div class="node-title">
                 <div *ngFor="let field of viewFields"
                      class="item l-font"

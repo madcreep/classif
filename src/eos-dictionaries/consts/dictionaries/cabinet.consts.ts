@@ -47,7 +47,7 @@ export const CABINET_DICT: IDictionaryDescriptor = Object.assign({}, LINEAR_TEMP
         title: 'Подразделение'
     }, {
         key: 'users',
-        type: 'dictionary',
+        type: 'array',
         title: 'Пользователи кабинета'
     }, {
         key: 'folders',
@@ -56,7 +56,7 @@ export const CABINET_DICT: IDictionaryDescriptor = Object.assign({}, LINEAR_TEMP
         foreignKey: 'FOLDER_List'
     }, {
         key: 'owners',
-        type: 'dictionary',
+        type: 'array',
         title: 'Владельцы кабинета'
     }, {
         key: 'cabinetAccess',

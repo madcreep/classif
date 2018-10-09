@@ -5,6 +5,9 @@
         min-height: 32px;
         display: inline-flex;
         width: 100%;
+        .node-left {
+            padding: 12px;
+        }
         .node-row {
             cursor: pointer;
             display: inline-block;

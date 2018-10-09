@@ -33,8 +33,8 @@
             container="body"
             containerClass="tooltip-error"
             triggers="" />
-        <div class="btn eye" (mousedown)="showPass()" (mouseup)="hidePass()">
-            <i class="eos-icon" [ngClass]="{'eos-icon-show-blue': hidePassword, 'eos-icon-show-white': !hidePassword}"></i>
+        <div class="btn eye" (click)="togglePass()">
+            <i class="eos-icon small" [ngClass]="{'eos-icon-show-blue': hidePassword, 'eos-icon-show-grey': !hidePassword}"></i>
         </div>
     </div>
     <button type="submit"
