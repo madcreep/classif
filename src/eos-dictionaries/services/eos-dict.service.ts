@@ -446,7 +446,8 @@ export class EosDictService {
 
         if (this.treeNode) {
             return this.preSave(dictionary, data)
-                .then(() => dictionary.descriptor.addRecord(data, this.treeNode.data))
+                .then(() =>
+                    dictionary.descriptor.addRecord(data, this.treeNode.data))
                 .then((results) => {
                     return this._reloadList(true)
                         .then(() => {
