@@ -1,6 +1,6 @@
 export const APP_CONFIG = {
-    webBaseUrl: 'http://www.eos.ru',
-    apiBaseUrl: 'http://localhost/api',
+    webBaseUrl: '..',
+    apiBaseUrl: '..',
     authApi: '/Services/ApiSession.asmx/',
     dataApi: '/OData.svc/',
 };

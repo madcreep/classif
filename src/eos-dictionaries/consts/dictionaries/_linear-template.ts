@@ -11,7 +11,7 @@ export const LINEAR_TEMPLATE: IDictionaryDescriptor = {
     actions: [
         'add', 'markRecords', 'quickSearch', 'fullSearch', 'order', 'userOrder', 'restore',
         'moveUp', 'moveDown', 'navigateUp', 'navigateDown', 'showDeleted', 'removeHard',
-        'edit', 'view', 'remove', 'removeHard', 'userOrder', 'tableCustomization'],
+        'edit', 'view', 'remove', 'removeHard', 'userOrder'],
     keyField: 'ISN_LCLASSIF',
     searchConfig: [SEARCH_TYPES.quick],
     fields: COMMON_FIELDS.concat([{

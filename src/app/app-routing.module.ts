@@ -15,6 +15,7 @@ import { UserRestComponent } from '../eos-rest/clman/user.component';
 import { CanDeactivateGuard } from './guards/can-deactivate.guard';
 import { AuthorizedGuard, UnauthorizedGuard } from './guards/eos-auth.guard';
 import { LoginComponent } from './login/login.component';
+import {ParametersSystemComponent} from '../eos-parameters/parametersSystem/parametersSystem.component';
 /// import { environment } from 'environments/environment';
 
 const childrenDictionariesComponent = [{
@@ -123,6 +124,25 @@ const routes: Routes = [{
     canActivate: [AuthorizedGuard],
     component: UserRestComponent,
     data: { title: 'user page' }
+}, {
+    path: 'parameters',
+    canActivate: [AuthorizedGuard],
+    children: [
+        {
+            path: ':id',
+            pathMatch: 'full',
+            component: ParametersSystemComponent,
+            canDeactivate: [CanDeactivateGuard],
+            data: {
+                showNav: true
+            }
+        },
+        {
+            path: '',
+            redirectTo: 'rc',
+            pathMatch: 'full'
+        }
+    ]
 }, {
     path: '',
     redirectTo: '/desk/system',

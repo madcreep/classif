@@ -5,15 +5,16 @@ import {DOCGROUP_DICT} from './docgroup.consts';
 import {
     ADDRESS_REPLACE,
     ADDRESSEES_KIND,
-    BUNCHS_RK_KIND, CONSIDERATION_KIND,
-    DOCUMENT_TYPES, EXECUTOR_CONSIDERATION_KIND, FORWARDING_DOCS_KIND,
+    BUNCHS_RK_KIND, CONSIDERATION_KIND, DATE_EXECUTION_PROJECT_KIND,
+    DOCUMENT_TYPES, EXECUTOR_CONSIDERATION_KIND, EXECUTOR_PROJECT_KIND, FORWARDING_DOCS_KIND,
     ITEMS_KIND,
     KOR_RULE_SEND, ORDERS_KIND,
-    RESOLUTION_KIND,
-    TYPE_OF_RULE
+    RESOLUTION_KIND, SIGNATURES_KIND,
+    TYPE_OF_RULE, VISAS_KIND, VISAS_KIND_TAKE
 } from '../sev-const';
 import {SECURITY_DICT} from './security.consts';
 import {ORG_TYPE_DICT} from './org-type.consts';
+import {CONTACT_DICT} from './contact.consts';
 
 export const RULES_SEV_DICT: IDictionaryDescriptor = Object.assign({}, LINEAR_TEMPLATE, {
     id: 'sev-rules',
@@ -180,7 +181,7 @@ export const RULES_SEV_DICT: IDictionaryDescriptor = Object.assign({}, LINEAR_TE
             default: true,
         }, {
             key: 'Redirection',
-            title: 'Доклад об отправке документа',
+            title: 'Доклад об отправке документов',
             type: 'boolean',
             default: true,
         }, {
@@ -380,7 +381,7 @@ export const RULES_SEV_DICT: IDictionaryDescriptor = Object.assign({}, LINEAR_TE
             default: 0,
         }, {
             key: 'executorFiles',
-            title: 'Файлы иисполнителя',
+            title: 'Файлы исполнителя',
             type: 'boolean',
             default: true,
         }, {
@@ -393,6 +394,153 @@ export const RULES_SEV_DICT: IDictionaryDescriptor = Object.assign({}, LINEAR_TE
             title: 'Пересчитывать срок отправки докуладов',
             type: 'boolean',
             default: true,
+        }, {
+            key: 'regNumber',
+            title: 'Рег.№ в \'Адресат\'',
+            type: 'boolean',
+        }, {
+            key: 'reportExecution',
+            title: 'Отчет об исполнении в \'Поручение\'',
+            type: 'boolean',
+            default: true,
+        }, {
+            key: 'BUNCHS_RKPD',
+            type: 'boolean',
+            title: 'Связки РКПД:',
+            required: true,
+        }, {
+            key: 'executorsProject',
+            type: 'boolean',
+            title: 'Исполнители',
+            required: true,
+        }, {
+            key: 'kindExecutorProject',
+            type: 'buttons',
+            options: EXECUTOR_PROJECT_KIND,
+            default: 1,
+        }, {
+            key: 'dateExecutionProject',
+            type: 'boolean',
+            title: 'Срок исполнения',
+            required: true,
+        }, {
+            key: 'kindDateExecutionProject',
+            type: 'buttons',
+            options: DATE_EXECUTION_PROJECT_KIND,
+            default: 1,
+        }, {
+            key: 'filesRKPD',
+            type: 'boolean',
+            title: 'Файлы РКПД',
+            required: true,
+        }, {
+            key: 'visasKind',
+            type: 'buttons',
+            options: VISAS_KIND,
+            default: 0,
+        }, {
+            key: 'visasInfo',
+            type: 'boolean',
+            title: 'Информация о визе',
+            required: true,
+        }, {
+            key: 'visasFiles',
+            type: 'boolean',
+            title: 'Файл визы',
+            required: true,
+        }, {
+            key: 'signatures',
+            type: 'boolean',
+            title: 'Подписи',
+            required: true,
+        }, {
+            key: 'signaturesKind',
+            type: 'buttons',
+            options: SIGNATURES_KIND,
+            default: 0,
+        }, {
+            key: 'signaturesInfo',
+            type: 'boolean',
+            title: 'Информация о подписи',
+            required: true,
+        }, {
+            key: 'signaturesFiles',
+            type: 'boolean',
+            title: 'Файл подписи',
+            required: true,
+        }, {
+            key: 'registrationProject',
+            title: 'Доклад о регистрации (отказ в регистрации)',
+            type: 'boolean',
+            default: true,
+        }, {
+            key: 'forwardingVisa',
+            title: 'Доклад о направлении документа на визирование',
+            type: 'boolean',
+            default: true,
+        }, {
+            key: 'forwardingSign',
+            title: 'Доклад о направлении документа на подписание',
+            type: 'boolean',
+            default: true,
+        }, {
+            key: 'reportVisa',
+            title: 'Доклад о визировании',
+            type: 'boolean',
+            default: true,
+        }, {
+            key: 'reportSign',
+            title: 'Доклад о подписании',
+            type: 'boolean',
+            default: true,
+        }, {
+            key: 'executor',
+            title: 'Исполнитель',
+            type: 'select',
+            dictionaryId: CONTACT_DICT.id,
+            options: [],
+        }, {
+            key: 'executive',
+            title: 'ДЛ за "Текущую организацию"',
+            type: 'select',
+            dictionaryId: CONTACT_DICT.id,
+            options: [],
+        }, {
+            key: 'visasKindTake',
+            type: 'buttons',
+            options: VISAS_KIND_TAKE,
+            default: 0,
+        }, {
+            key: 'signatureKindTake',
+            type: 'buttons',
+            options: VISAS_KIND_TAKE,
+            default: 0,
+        }, {
+            key: 'visaDate',
+            title: 'Срок визы, если требуемый срок истек',
+            type: 'number',
+        }, {
+            key: 'visaDays',
+            title: 'дней',
+            type: 'boolean',
+            default: true,
+        }, {
+            key: 'signatureDate',
+            title: 'Срок подписи, если требуемый срок истек',
+            type: 'number',
+        }, {
+            key: 'signatureDays',
+            title: 'дней',
+            type: 'boolean',
+            default: true,
+        }, {
+            key: 'visaForward',
+            title: 'Направить на визирование',
+            type: 'boolean',
+        }, {
+            key: 'signatureForward',
+            title: 'Направить на подпись',
+            type: 'boolean',
         }],
     editFields: ['CLASSIF_NAME', 'NOTE', 'TYPE_DOC', 'RULE_KIND', 'DUE_DOCGROUP', 'DUE_DEP', 'SENDER', 'BUNCHS_RK',
         'BUNCHS_RK_KIND', 'BUNCHS_RK_TYPE', 'STAMP_ACCESS', 'RUBRICS', 'ADR_SUBJ_DOC', 'RGN_SUBJ_DOC', 'VISAS',
@@ -404,7 +552,11 @@ export const RULES_SEV_DICT: IDictionaryDescriptor = Object.assign({}, LINEAR_TE
         'orders', 'ordersKind', 'categoryOrders', 'noteOrders', 'takeFilesOrders', 'takeFilesRK', 'takeOrdersRK', 'forwardingDocs',
         'kindForwardingDocs', 'kindConsideration', 'textConsideration', 'categoryConsideration', 'noteConsideration',
         'controlConsideration', 'planConsideration', 'controllerOrder', 'executionCourse', 'controlDate', 'executionStatus', 'controlBase',
-        'executorConsideration', 'kindExecutorConsideration', 'executorFiles', 'editSet'],
+        'executorConsideration', 'kindExecutorConsideration', 'executors', 'executorFiles', 'editSet', 'calcDate', 'regNumber',
+        'BUNCHS_RKPD', 'executorsProject', 'kindExecutorProject', 'dateExecutionProject', 'kindDateExecutionProject', 'filesRKPD',
+        'visasKind', 'visasInfo', 'visasFiles', 'signatures', 'signaturesKind', 'signaturesInfo', 'signaturesFiles', 'registrationProject',
+        'forwardingVisa', 'forwardingSign', 'reportVisa', 'reportSign', 'executor', 'executive', 'visaDate', 'visaDays',
+        'signatureDate', 'signatureDays', 'visaForward', 'signatureForward', 'visasKindTake', 'signatureKindTake'],
     listFields: ['CLASSIF_NAME', 'NOTE'],
     allVisibleFields: [],
     quickViewFields: ['CLASSIF_NAME', 'NOTE', 'TYPE_DOC', 'RULE_KIND', 'DUE_DOCGROUP', 'DUE_DEP'],

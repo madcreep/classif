@@ -29,8 +29,8 @@ export class EosDataConvertService {
     getInputs(
             fieldsDescription: any[],
             data: any, editMode = true,
-            dictSrv: DictionaryDescriptorService,
-            channelSrv: EosBroadcastChannelService
+            dictSrv?: DictionaryDescriptorService,
+            channelSrv?: EosBroadcastChannelService
     ) {
         const inputs: any = {};
         if (fieldsDescription) {
@@ -146,6 +146,7 @@ export class EosDataConvertService {
                                         key: _dict + '.' + descr[_key].foreignKey,
                                         label: descr[_key].title,
                                         options: options,
+                                        hideLabel: !(descr[_key].title),
                                         required: descr[_key].required,
                                         forNode: descr[_key].forNode,
                                         value: data[_dict][descr[_key].foreignKey]
@@ -159,6 +160,7 @@ export class EosDataConvertService {
                                         label: descr[_key].title,
                                         options: descr[_key].options,
                                         required: descr[_key].required,
+                                        hideLabel: !(descr[_key].title),
                                         forNode: descr[_key].forNode,
                                         value: data[_dict][descr[_key].foreignKey]
                                             || descr[_key].default,

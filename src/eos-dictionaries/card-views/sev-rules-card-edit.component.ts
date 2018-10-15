@@ -19,6 +19,9 @@ export class SevRulesCardEditComponent extends BaseCardEditComponent {
     get isBunchRK(): boolean {
         return this.getValue('rec.BUNCHS_RK');
     }
+    get isBunchRKPD(): boolean {
+        return this.getValue('rec.BUNCHS_RKPD');
+    }
     get isBunchWithType(): boolean {
         return this.getValue('rec.BUNCHS_RK_KIND') === 1;
     }
@@ -48,5 +51,41 @@ export class SevRulesCardEditComponent extends BaseCardEditComponent {
     }
     get consideration(): boolean {
         return this.getValue('rec.Consideration');
+    }
+    get executors(): boolean {
+        return this.getValue('rec.executors');
+    }
+    get executorFiles(): boolean {
+        return this.getValue('rec.executorFiles');
+    }
+    get editSet(): boolean {
+        return this.getValue('rec.editSet');
+    }
+    get reportExecution(): boolean {
+        return this.getValue('rec.reportExecution');
+    }
+    get executorsProject(): boolean {
+        return this.getValue('rec.executorsProject');
+    }
+    get dateExecutionProject(): boolean {
+        return this.getValue('rec.dateExecutionProject');
+    }
+    get visas(): boolean {
+        return this.getValue('rec.VISAS');
+    }
+    get visasInfo(): boolean {
+        return this.getValue('rec.visasInfo');
+    }
+    get signatures(): boolean {
+        return this.getValue('rec.signatures');
+    }
+    get signaturesInfo(): boolean {
+        return this.getValue('rec.signaturesInfo');
+    }
+    get visaForward(): boolean {
+        return this.getValue('rec.visaForward');
+    }
+    get signatureForward(): boolean {
+        return this.getValue('rec.signatureForward');
     }
 }

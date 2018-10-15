@@ -119,5 +119,4 @@ export class OrganizationDictionaryDescriptor extends TreeDictionaryDescriptor {
             return Promise.resolve([]);
         }
     }
-
 }
