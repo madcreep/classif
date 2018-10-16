@@ -33,10 +33,10 @@
                 container="body">
                 <button dropdownToggle
                     tooltip="Добавить владельца"
-                    placement="bottom"
+                    placement="right"
                     containerClass="tooltip-info"
-                    container="body"
-                    class="btn action-btn btn-primary-light"><span class="eos-icon eos-icon-plus-blue small" aria-hidden="true"></span></button>
+                    class="btn action-btn btn-primary-light"><span class="eos-icon eos-icon-plus-blue small" aria-hidden="true"></span>
+                </button>
                 <ul *dropdownMenu
                     class="dropdown-menu owners-menu"
                     role="menu">
@@ -48,12 +48,14 @@
                     <li *ngIf="!possibleOwners.length"
                         class="disabled menuitem"><span class="disabled">Нет доступных ДЛ</span></li>
                 </ul>
+                <button class="btn action-btn btn-primary-light"
+                        tooltip="Удалить выбранные"
+                        placement="bottom"
+                        containerClass="tooltip-info"
+                        (click)="remove()"><span class="eos-icon eos-icon-bin-blue small" aria-hidden="true"></span>
+                </button>
             </div>
-            <button class="btn action-btn btn-primary-light"
-                tooltip="Удалить выбранные"
-                placement="bottom"
-                containerClass="tooltip-info"
-                (click)="remove()"><span class="eos-icon eos-icon-bin-blue small" aria-hidden="true"></span></button>
+
         </div>
         <div class="row">
             <table class="table usual-border border-bottom table-owners">
