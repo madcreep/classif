@@ -83,7 +83,7 @@
         (mousedown)="tryMove($event)"
         class="item-content xl-font block"
         [routerLink]="[item.value.url]"
-        tooltip="{{deskId === 'system' ? item.value.title : item.value.title}}"
+        tooltip="{{deskId === 'system' ? '' : item.value.title}}"
         placement="bottom"
         containerClass="tooltip-info word-break"
         container="body">
