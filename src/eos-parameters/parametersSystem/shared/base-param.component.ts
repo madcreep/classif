@@ -79,7 +79,7 @@ export class BaseParamComponent implements OnDestroy, OnInit {
                     })
                 );
             })
-            .catch(data => console.log(data));
+            .catch(data => {});
     }
     convData(data: Array<any>) {
         const d = {};
@@ -96,7 +96,7 @@ export class BaseParamComponent implements OnDestroy, OnInit {
                     this.formChanged.emit(false);
                     this.prepareData.rec = Object.assign({}, this.newData.rec);
                 })
-                .catch(data => console.log(data));
+                .catch(data => {});
         }
     }
     cancel() {

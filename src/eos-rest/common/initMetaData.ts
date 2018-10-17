@@ -868,7 +868,8 @@ const commonMeta = {
             INS_DATE: _t.d,
             UPD_DATE: _t.d,
             INS_WHO: _t.i,
-            UPD_WHO: _t.i
+            UPD_WHO: _t.i,
+            CONTACT_List: _t.dt
         },
         readonly: [
             'ISN_REGION'
