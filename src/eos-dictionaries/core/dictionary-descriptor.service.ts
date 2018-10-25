@@ -11,9 +11,10 @@ import { CabinetDictionaryDescriptor } from 'eos-dictionaries/core/cabinet-dicti
 import { DocgroupDictionaryDescriptor } from 'eos-dictionaries/core/docgroup-dictionary-descriptor';
 import {NADZORDICTIONARIES} from '../consts/dictionaries/nadzor.consts';
 import {BroadcastChanelDictionaryDescriptor} from './broadcast-chanel-dictionary-descriptor';
+import {SevRulesDictionaryDescriptor} from './sev-rules-dictionary-descriptor';
 import {EosBroadcastChannelService} from '../services/eos-broadcast-channel.service';
 import {SevCollisionsDictionaryDescriptor} from './sev-collisions-dictionary-descriptor';
-import {NadzorDictionaryDescriptor} from './nadzor-dictionary-descriptor';
+import {EosSevRulesService} from '../services/eos-sev-rules.service';
 
 @Injectable()
 export class DictionaryDescriptorService {
@@ -22,7 +23,8 @@ export class DictionaryDescriptorService {
 
     constructor(
         private apiSrv: PipRX,
-        private _channelSrv: EosBroadcastChannelService
+        private _channelSrv: EosBroadcastChannelService,
+        private _rulesSrv: EosSevRulesService
     ) {
         this._mDicts = new Map<string, IDictionaryDescriptor>();
         this._mDictClasses = new Map<string, AbstractDictionaryDescriptor>();
@@ -63,7 +65,6 @@ export class DictionaryDescriptorService {
     }
 
     getDescriptorClass(name: string): AbstractDictionaryDescriptor {
-
         let res = this._mDictClasses.get(name);
         if (!res) {
             const descr = this.getDescriptorData(name);
@@ -78,6 +79,9 @@ export class DictionaryDescriptorService {
                     case 'broadcast-channel':
                         res = new BroadcastChanelDictionaryDescriptor(descr, this.apiSrv, this._channelSrv);
                         break;
+                    case 'sev-rules':
+                        res = new SevRulesDictionaryDescriptor(descr, this.apiSrv, this._rulesSrv);
+                        break;
                     case 'cabinet':
                         res = new CabinetDictionaryDescriptor(descr, this.apiSrv);
                         break;
@@ -87,20 +91,7 @@ export class DictionaryDescriptorService {
                     case 'sev-collisions':
                         res = new SevCollisionsDictionaryDescriptor(descr, this.apiSrv);
                         break;
-
                 }
-
-                // Added for parent be a Nadzor
-                if (!res) {
-                    for (const d of NADZORDICTIONARIES) {
-                        if (d.id && d.id === descr.id) {
-                            res = new NadzorDictionaryDescriptor(descr, this.apiSrv);
-                            break;
-                        }
-                    }
-                }
-
-
 
                 if (!res) {
                     switch (descr.dictType) {

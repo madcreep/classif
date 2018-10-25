@@ -11,37 +11,37 @@ export class SevRulesCardEditComponent extends BaseCardEditComponent {
         super(injector);
     }
     get typeDoc(): number {
-        return this.getValue('rec.TYPE_DOC');
+        return this.getValue('rec.type');
     }
     get ruleKind(): number {
-        return this.getValue('rec.RULE_KIND');
+        return this.getValue('rec.kind');
     }
-    get isBunchRK(): boolean {
-        return this.getValue('rec.BUNCHS_RK');
+    get link(): boolean {
+        return this.getValue('rec.link');
     }
     get isBunchRKPD(): boolean {
-        return this.getValue('rec.BUNCHS_RKPD');
+        return this.getValue('rec.LinkPD');
     }
-    get isBunchWithType(): boolean {
-        return this.getValue('rec.BUNCHS_RK_KIND') === 1;
+    get isLinkKindWithType(): boolean {
+        return this.getValue('rec.linkKind') === 1;
     }
-    get adrSubjDoc(): boolean {
-        return this.getValue('rec.ADR_SUBJ_DOC');
+    get address(): boolean {
+        return this.getValue('rec.address');
     }
-    get addressees(): boolean {
-        return this.getValue('rec.ADDRESSEES');
+    get addressee(): boolean {
+        return this.getValue('rec.addressee');
     }
-    get files(): boolean {
-        return this.getValue('rec.FILES');
+    get file(): boolean {
+        return this.getValue('rec.file');
     }
-    get resolutionFiles(): boolean {
-        return this.getValue('rec.RESOLUTION_FILES');
+    get taskFile(): boolean {
+        return this.getValue('rec.taskFile');
     }
-    get items(): boolean {
-        return this.getValue('rec.ITEMS');
+    get item(): boolean {
+        return this.getValue('rec.item');
     }
     get resolution(): boolean {
-        return this.getValue('rec.Resolution');
+        return this.getValue('rec.resolution');
     }
     get orders(): boolean {
         return this.getValue('rec.orders');
@@ -70,11 +70,11 @@ export class SevRulesCardEditComponent extends BaseCardEditComponent {
     get dateExecutionProject(): boolean {
         return this.getValue('rec.dateExecutionProject');
     }
-    get visas(): boolean {
-        return this.getValue('rec.VISAS');
+    get Visa(): boolean {
+        return this.getValue('rec.Visa');
     }
-    get visasInfo(): boolean {
-        return this.getValue('rec.visasInfo');
+    get VisaInfo(): boolean {
+        return this.getValue('rec.VisaInfo');
     }
     get signatures(): boolean {
         return this.getValue('rec.signatures');
@@ -87,5 +87,20 @@ export class SevRulesCardEditComponent extends BaseCardEditComponent {
     }
     get signatureForward(): boolean {
         return this.getValue('rec.signatureForward');
+    }
+    get forwardingVisa(): boolean {
+        return this.getValue('rec.forwardingVisa');
+    }
+    get forwardingSign(): boolean {
+        return this.getValue('rec.forwardingSign');
+    }
+    get reportVisa(): boolean {
+        return this.getValue('rec.reportVisa');
+    }
+    get reportSign(): boolean {
+        return this.getValue('rec.reportSign');
+    }
+    get infoVisaign(): boolean {
+        return this.getValue('rec.infoVisaign');
     }
 }

@@ -68,7 +68,7 @@ export class BaseParamComponent implements OnDestroy, OnInit {
                                 }
                             });
                             this.formChanged.emit(changed);
-                    })
+                        })
                 );
                 this.subscriptions.push(
                     this.form.statusChanges.subscribe(status => {

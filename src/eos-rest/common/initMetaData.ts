@@ -1948,33 +1948,33 @@ const commonMeta = {
         ]
     },
     SEV_SUBSCRIBE: { pk: 'ISN_SUBSCRIBE',
-    properties: {
-        ISN_SUBSCRIBE: _t.i,
-        ISN_DOC: _t.i,
-        KIND_DOC: _t.i,
-        DUE_OWNER_ORGANIZ: _t.s,
-        PARTICIPANT_ISN: _t.i,
-        RETURN_ID: _t.s,
-        EDMS_NAME: _t.s,
-        EDMS_VERSION: _t.s,
-        EDMS_UID: _t.s,
-        DOC_UID: _t.s,
-        DOC_VERSION_UID: _t.s,
-        DOC_NUMBER: _t.s,
-        DOC_DATE: _t.i,
-        DOC_GROUP: _t.s,
-        DOC_GROUP_UID: _t.s,
-        SUBSCRIPTIONS: _t.s,
-        HASH: _t.s,
-        TASKS_UIDS: _t.s,
-        VISA_SIGN_UIDS: _t.s
-    },
-    readonly: [
+        properties: {
+            ISN_SUBSCRIBE: _t.i,
+            ISN_DOC: _t.i,
+            KIND_DOC: _t.i,
+            DUE_OWNER_ORGANIZ: _t.s,
+            PARTICIPANT_ISN: _t.i,
+            RETURN_ID: _t.s,
+            EDMS_NAME: _t.s,
+            EDMS_VERSION: _t.s,
+            EDMS_UID: _t.s,
+            DOC_UID: _t.s,
+            DOC_VERSION_UID: _t.s,
+            DOC_NUMBER: _t.s,
+            DOC_DATE: _t.i,
+            DOC_GROUP: _t.s,
+            DOC_GROUP_UID: _t.s,
+            SUBSCRIPTIONS: _t.s,
+            HASH: _t.s,
+            TASKS_UIDS: _t.s,
+            VISA_SIGN_UIDS: _t.s
+        },
+        readonly: [
 
-    ],
-    relations: [
+        ],
+        relations: [
 
-    ] },
+        ] },
     DEPARTMENT_REPL: {
         pk: 'ISN_DEPARTMENT_REPL',
         properties: {
@@ -1991,7 +1991,7 @@ const commonMeta = {
 
         ]
     },
-   // NADZOR
+    // NADZOR
     NP_ADDRESS_VID_CL: {
         pk: 'ISN_LCLASSIF',
         properties: {

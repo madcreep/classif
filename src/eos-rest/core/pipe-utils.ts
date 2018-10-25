@@ -213,7 +213,7 @@ export class PipeUtils {
 
                             this.appendChange(l[j], chr,
                                 PipeUtils.combinePath((path ? path : etn) + this.PKinfo(it._orig || it),
-                                        pr.name));
+                                    pr.name));
                             if (l[j].__metadata.__type === 'CONTACT') {
                                 delete l[j].__metadata;
                                 // l[j].method = _ES.Added

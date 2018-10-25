@@ -44,12 +44,12 @@ export const TYPE_OF_RULE: Array<OptionDiscription> = [{
     title: 'Прием доклада'
 }];
 
-export const BUNCHS_RK_KIND: Array<OptionDiscription> = [
+export const LINK_KIND: Array<OptionDiscription> = [
     { value: 0, title: 'Все'},
     { value: 1, title: 'С типом: '}
 ];
 
-export const ADDRESSEES_KIND: Array<OptionDiscription> = [
+export const ADDRESSEE_KIND: Array<OptionDiscription> = [
     { value: 0, title: 'Все'},
     { value: 1, title: 'Адресаты сообщений'}
 ];
@@ -86,13 +86,13 @@ export const CONSIDERATION_KIND: Array<OptionDiscription> = [
     { value: 2, title: 'Последение'}
 ];
 
-export const VISAS_KIND: Array<OptionDiscription> = [
+export const Visa_KIND: Array<OptionDiscription> = [
     { value: 0, title: 'Все'},
     { value: 1, title: 'Первичные'},
     { value: 2, title: 'Только адресат сообщения'}
 ];
 
-export const VISAS_KIND_TAKE: Array<OptionDiscription> = [
+export const Visa_KIND_TAKE: Array<OptionDiscription> = [
     { value: 0, title: 'Все'},
     { value: 1, title: 'Только свои'}
 ];
