@@ -88,39 +88,19 @@ export class DictionaryDescriptorService {
                         res = new SevCollisionsDictionaryDescriptor(descr, this.apiSrv);
                         break;
 
-                    // Added for parent be a Nadzor
-                    case 'ob-motiv':
-                    case 'address-vid':
-                    case 'codex-type':
-                    case 'fig-role':
-                    case 'mera-osnov':
-                    case 'mera-reagir':
-                    case 'mera-type':
-                    case 'nakaz-type':
-                    case 'narushen':
-                    case 'nez-metod-rassled':
-                    case 'ob-motiv':
-                    case 'ob-nomove':
-                    case 'ob-osnov':
-                    case 'ob-otziv':
-                    case 'ob-return':
-                    case 'ob-type':
-                    case 'ob-vosst':
-                    case 'ob-what':
-                    case 'org-prav-form':
-                    case 'osn-osvob':
-                    case 'osn-prin-resh':
-                    case 'osnzader':
-                    case 'result-rassled':
-                    case 'spec-subject':
-                    case 'sposob-ukr-pr':
-                    case 'status':
-                    case 'sud-type':
-                    case 'sudim':
-                    case 'udost-type':
-                        res = new NadzorDictionaryDescriptor(descr, this.apiSrv);
-                        break;
                 }
+
+                // Added for parent be a Nadzor
+                if (!res) {
+                    for (const d of NADZORDICTIONARIES) {
+                        if (d.id && d.id === descr.id) {
+                            res = new NadzorDictionaryDescriptor(descr, this.apiSrv);
+                            break;
+                        }
+                    }
+                }
+
+
 
                 if (!res) {
                     switch (descr.dictType) {
