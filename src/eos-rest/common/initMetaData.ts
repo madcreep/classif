@@ -2421,13 +2421,36 @@ const commonMeta = {
             NOTE: _t.s
         },
         readonly: [
-            // 'PROTECTED'
+            'PROTECTED'
         ],
         relations: [
             { name: 'PARENT_Ref', __type: 'NP_SUD_RESHEN_TYPE_CL', sf: 'DUE', tf: 'DUE' }
         ]
 
-    }
+    },
+    NP_OSN_PRED_DELA_CL: {
+        pk: 'DUE',
+        properties: {
+            ISN_NODE: _t.i,
+            ISN_HIGH_NODE: _t.i,
+            DUE: _t.s,
+            MAXDUE: _t.s,
+            LAYER: _t.i,
+            IS_NODE: _t.i,
+            CLASSIF_NAME: _t.s,
+            WEIGHT: _t.i,
+            PROTECTED: _t.i,
+            DELETED: _t.i,
+            NOTE: _t.s
+        },
+        readonly: [
+            // 'PROTECTED'
+        ],
+        relations: [
+            { name: 'PARENT_Ref', __type: 'NP_OSN_PRED_DELA_CL', sf: 'DUE', tf: 'DUE' }
+        ]
+
+    },
 };
 
 export function commonMergeMeta(meta: any) {

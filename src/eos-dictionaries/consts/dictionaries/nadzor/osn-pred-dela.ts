@@ -1,18 +1,18 @@
-import { E_DICT_TYPE, ITreeDictionaryDescriptor } from 'eos-dictionaries/interfaces';
-import {SEARCH_TYPES} from '../../search-types';
+import {E_DICT_TYPE, ITreeDictionaryDescriptor} from 'eos-dictionaries/interfaces/index';
 import {COMMON_FIELD_NAME, COMMON_FIELDS} from '../_common';
+import {SEARCH_TYPES} from '../../search-types';
 
-export const NP_RESHEN_CL: ITreeDictionaryDescriptor = {
-    id: 'reshen',
-    apiInstance: 'NP_RESHEN_CL',
+export const NP_OSN_PRED_DELA_CL: ITreeDictionaryDescriptor = /*Object.assign({}, NADZOR_TEMPLATE, */{
+    id: 'osn-pred-dela',
+    apiInstance: 'NP_OSN_PRED_DELA_CL',
     dictType: E_DICT_TYPE.tree,
-    title: 'Принятые решения',
+    title: 'Основания представления дела',
     defaultOrder: 'CLASSIF_NAME',
-    visible: true,
-    iconName: '',
+    iconName: 'eos-icon-folder-group-blue',
     actions: ['add', 'markRecords', 'quickSearch', 'fullSearch', 'order', 'userOrder',
         'moveUp', 'moveDown', 'navigateUp', 'navigateDown', 'showDeleted', 'tableCustomization',
-        'edit', 'view', 'remove', 'removeHard', 'userOrder', 'restore', 'showAllSubnodes'],
+        'edit', 'view', 'remove', 'removeHard', 'userOrder', 'restore', 'showAllSubnodes'
+    ],
     keyField: 'DUE',
     parentField: 'PARENT_DUE',
     searchConfig: [SEARCH_TYPES.quick],
@@ -44,17 +44,24 @@ export const NP_RESHEN_CL: ITreeDictionaryDescriptor = {
             isUnique: true,
             uniqueInDict: true,
             length: 150,
-        }), {
+        }),
+
+        {
             key: 'IS_NODE',
             title: 'IS_NODE',
             type: 'number'
         }]),
-    treeFields: ['CLASSIF_NAME', ],
+    treeFields: ['CLASSIF_NAME'],
     editFields: ['CLASSIF_NAME', 'NOTE'],
+
+    visible: true,
+
     searchFields: ['CLASSIF_NAME'],
     fullSearchFields: ['CLASSIF_NAME', 'NOTE'],
     quickViewFields: ['CLASSIF_NAME', 'NOTE'],
     shortQuickViewFields: ['CLASSIF_NAME'],
     listFields: ['CLASSIF_NAME', 'NOTE'],
     allVisibleFields: [],
+
+
 };
