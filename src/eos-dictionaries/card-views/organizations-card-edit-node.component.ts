@@ -8,14 +8,10 @@ import { BaseCardEditComponent } from './base-card-edit.component';
     styleUrls: ['organizations-card-edit-node.component.scss']
 })
 export class OrganizationsCardEditNodeComponent extends BaseCardEditComponent {
-    currTab = 0;
 
     constructor(injector: Injector) {
         super(injector);
     }
 
-    setTab(idx: number) {
-        this.currTab = idx;
-    }
 
 }

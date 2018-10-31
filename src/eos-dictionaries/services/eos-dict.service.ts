@@ -34,6 +34,7 @@ import { ConfirmWindowService } from 'eos-common/confirm-window/confirm-window.s
 export class EosDictService {
     viewParameters: IDictionaryViewParameters;
     currentNode: EosDictionaryNode;
+    currentTab: number;
 
     // private dictionary: EosDictionary;
     private treeNode: EosDictionaryNode; // record selected in tree
