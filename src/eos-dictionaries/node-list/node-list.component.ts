@@ -1,4 +1,4 @@
-import { Component, ViewChild, OnDestroy, OnInit } from '@angular/core';
+import {Component, ViewChild, OnDestroy, OnInit, Inject} from '@angular/core';
 import { SortableComponent, BsModalRef, BsModalService } from 'ngx-bootstrap';
 import { Subject } from 'rxjs/Subject';
 import 'rxjs/add/operator/takeUntil';
@@ -12,6 +12,7 @@ import { ColumnSettingsComponent } from '../column-settings/column-settings.comp
 import { EosUtils } from 'eos-common/core/utils';
 import {EosDictionary} from '../core/eos-dictionary';
 import {DictionaryDescriptorService} from '../core/dictionary-descriptor.service';
+import {DOCUMENT} from '@angular/common';
 
 const ITEM_WIDTH_FOR_NAN = 100;
 
@@ -39,9 +40,11 @@ export class NodeListComponent implements OnInit, OnDestroy {
     private ngUnsubscribe: Subject<any> = new Subject();
 
     constructor(
+        @Inject(DOCUMENT) document,
         private dictSrv: EosDictService,
         private modalSrv: BsModalService,
         private descrSrv: DictionaryDescriptorService,
+
     ) {
         dictSrv.visibleList$.takeUntil(this.ngUnsubscribe)
             .subscribe((nodes: EosDictionaryNode[]) => {
@@ -241,6 +244,12 @@ export class NodeListComponent implements OnInit, OnDestroy {
     onListScroll(evt: Event) {
         const offset = evt.srcElement.scrollLeft;
         this.headerOffset = - offset;
+
+        // Fix for unhidden tooltip in IE
+        const element = document.querySelector('.tooltip');
+        if (element) {
+            element.setAttribute('style', 'display: none');
+        }
     }
 
     private _countColumnWidth() {
