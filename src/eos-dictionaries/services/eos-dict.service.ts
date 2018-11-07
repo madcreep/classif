@@ -35,6 +35,7 @@ export class EosDictService {
     viewParameters: IDictionaryViewParameters;
     currentNode: EosDictionaryNode;
     currentTab: number;
+    firstUnfixedIndex: number;
 
     // private dictionary: EosDictionary;
     private treeNode: EosDictionaryNode; // record selected in tree

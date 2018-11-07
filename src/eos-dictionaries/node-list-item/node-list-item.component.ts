@@ -51,6 +51,10 @@ export class NodeListItemComponent implements OnInit, OnChanges {
         }
     }
 
+    getSlicedCustomFields() {
+        return this.custom.slice(this._dictSrv.firstUnfixedIndex);
+    }
+
     selectNode(evt: Event): void {
         evt.stopPropagation();
         this.openNode();
@@ -80,10 +84,16 @@ export class NodeListItemComponent implements OnInit, OnChanges {
         this.onHoverItem.emit(config);
     }
 
+    isShifted() {
+        return this._dictSrv.firstUnfixedIndex !== 0;
+    }
+
     private openNode() {
         if (!this.node.isDeleted && this.node.id !== '') {
             this._dictSrv.openNode(this.node.id);
             this.mark.emit(true);
         }
     }
+
+
 }
