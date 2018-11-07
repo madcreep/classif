@@ -105,11 +105,9 @@ export class NodeListComponent implements AfterViewChecked, OnInit, OnDestroy {
                     }
                 }
             });
-        this.dictSrv.firstUnfixedIndex = 0;
     }
 
     ngOnInit() {
-        this.dictSrv.firstUnfixedIndex = 0;
         const c = this.viewFields.length + this.customFields.length;
 
         this.viewFields.forEach((_f) => {
@@ -307,22 +305,19 @@ export class NodeListComponent implements AfterViewChecked, OnInit, OnDestroy {
     }
 
     onRightClick() {
-        this.dictSrv.firstUnfixedIndex++;
+        this.dictSrv.incFirstUnfixedIndex();
     }
 
     getSlicedCustomFields() {
-        return this.customFields.slice(this.dictSrv.firstUnfixedIndex);
+        return this.customFields.slice(this.params.firstUnfixedIndex);
     }
 
     onLeftClick() {
-        if (!this.dictSrv.firstUnfixedIndex || this.dictSrv.firstUnfixedIndex === 0) {
-            return;
-        }
-        this.dictSrv.firstUnfixedIndex--;
+        this.dictSrv.decFirstUnfixedIndex();
     }
 
     isShifted() {
-        return this.dictSrv.firstUnfixedIndex !== 0;
+        return (this.params.firstUnfixedIndex !== 0);
     }
 
     private _countColumnWidth() {
