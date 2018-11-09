@@ -321,26 +321,23 @@ export class NodeListComponent implements AfterViewChecked, OnInit, OnDestroy {
     }
 
     private _countColumnWidth() {
-        const t = 1;
         const length = {};
-        if (t) {
-            // TODO: recalc for overflowed and not separately
-            // this.viewFields.forEach((_f) => {
-            //     length[_f.key] = 100;
-            // });
-            // this.customFields.forEach((_f) => {
-            // });
+        if (this.isOverflowed()) {
+            this.min_length = [];
+            // console.log("over");
         } else {
+            // console.log("!over");
             let fullWidth = 0;
 
             this.viewFields.forEach((_f) => {
-                const itemWidth = _f.length;
+                const itemWidth = this.length[_f.key];
                 length[_f.key] = itemWidth;
                 fullWidth += itemWidth;
             });
+
             if (this.customFields) {
                 this.customFields.forEach((_f) => {
-                    const itemWidth = _f.length ? _f.length : ITEM_WIDTH_FOR_NAN;
+                    const itemWidth = this.length[_f.key] ? this.length[_f.key] : ITEM_WIDTH_FOR_NAN;
                     length[_f.key] = itemWidth;
                     fullWidth += itemWidth;
                 });
@@ -351,7 +348,8 @@ export class NodeListComponent implements AfterViewChecked, OnInit, OnDestroy {
             this.viewFields.forEach((_f) => {
                 length[_f.key] = length[_f.key] / fullWidth * 100;
             });
-            this.length = length;
+
+            this.min_length = length;
         }
     }
 
