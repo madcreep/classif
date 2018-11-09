@@ -99,9 +99,9 @@
     position: relative;
     overflow-y: auto;
     overflow-x: auto;
-    max-height: calc(100vh - 394px);
+    max-height: calc(100vh - 350px);
     bs-sortable {
-        width: 100%;
+        width: 100%; 
     }
     .spinner {
         margin-top: 10px;
