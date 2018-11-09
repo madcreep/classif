@@ -1,5 +1,4 @@
 import { Component, Injector } from '@angular/core';
-
 import { BaseCardEditComponent } from './base-card-edit.component';
 
 @Component({
