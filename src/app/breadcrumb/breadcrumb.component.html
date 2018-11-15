@@ -1,5 +1,9 @@
 <div class="eos-breadcrumb block">
     <eos-sandwich class="left-sandwich"
+                  tooltip="Навигационное дерево"
+                  placement="right"
+                  container="body"
+                  containerClass="tooltip-info word-break"
         [isLeft]="true"></eos-sandwich>
     <ol class="breadcrumb">
         <li *ngFor="let route of breadcrumbs; let isLast = last; let i = index;">
@@ -20,7 +24,12 @@
     </ol>
     <span class="pull-right">
         <eos-pushpin [hidden]="!showPushpin" [infoOpened]="infoOpened"></eos-pushpin>
-        <eos-sandwich class="right-sandwich" [isLeft]="false"></eos-sandwich>
+        <eos-sandwich class="right-sandwich"
+                      tooltip="Подробная информация"
+                      placement="left"
+                      container="body"
+                      containerClass="tooltip-info word-break"
+                      [isLeft]="false"></eos-sandwich>
     </span>
     <div *ngIf="showInfoAct && hasInfoData"
         class="opened-node-actions info-actions usual-border"
