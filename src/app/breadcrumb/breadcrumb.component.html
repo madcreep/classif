@@ -3,7 +3,7 @@
                   tooltip="Навигационное дерево"
                   placement="right"
                   container="body"
-                  containerClass="tooltip-info word-break"
+                  containerClass="tooltip-info no-arrow word-break"
         [isLeft]="true"></eos-sandwich>
     <ol class="breadcrumb">
         <li *ngFor="let route of breadcrumbs; let isLast = last; let i = index;">
@@ -28,7 +28,7 @@
                       tooltip="Подробная информация"
                       placement="left"
                       container="body"
-                      containerClass="tooltip-info word-break"
+                      containerClass="tooltip-info no-arrow word-break"
                       [isLeft]="false"></eos-sandwich>
     </span>
     <div *ngIf="showInfoAct && hasInfoData"
