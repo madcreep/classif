@@ -15,7 +15,7 @@ export const SIGN_KIND_DICT: IDictionaryDescriptor = {
     iconName: 'eos-icon-signature-blue',
     actions: [
         'quickSearch', 'fullSearch', 'order', 'userOrder',
-        'moveUp', 'moveDown', 'navigateUp', 'navigateDown', 'tableCustomization', /*'edit',*/ 'view',
+        'moveUp', 'moveDown', 'navigateUp', 'navigateDown', 'tableCustomization', 'edit', 'view',
         'restore'
     ],
     keyField: 'ISN_LCLASSIF',
@@ -33,7 +33,7 @@ export const SIGN_KIND_DICT: IDictionaryDescriptor = {
         }
     ]),
     treeFields: ['CLASSIF_NAME'],
-    editFields: ['CLASSIF_NAME', 'SIGN_TEXT'],
+    editFields: ['SIGN_TEXT'],
     searchFields: ['CLASSIF_NAME', 'SIGN_TEXT'],
     fullSearchFields: ['CLASSIF_NAME', 'SIGN_TEXT'],
     quickViewFields: ['CLASSIF_NAME', 'SIGN_TEXT'],
