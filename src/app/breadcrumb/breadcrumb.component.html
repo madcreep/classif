@@ -1,10 +1,11 @@
 <div class="eos-breadcrumb block">
-    <eos-sandwich class="left-sandwich"
+    <eos-sandwich *ngIf="treeButtonVisible()" class="left-sandwich pull-left"
                   tooltip="Навигационное дерево"
                   placement="right"
                   container="body"
                   containerClass="tooltip-info no-arrow word-break"
         [isLeft]="true"></eos-sandwich>
+    <div class="pull-left">
     <ol class="breadcrumb">
         <li *ngFor="let route of breadcrumbs; let isLast = last; let i = index;">
             <a class="breadcrumb-item link primary-text l-font"
@@ -22,6 +23,7 @@
                 *ngIf="isLast"> {{route.title}}</span>
         </li>
     </ol>
+    </div>
     <span class="pull-right">
         <eos-pushpin [hidden]="!showPushpin" [infoOpened]="infoOpened"></eos-pushpin>
         <eos-sandwich class="right-sandwich"
